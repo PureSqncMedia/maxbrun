@@ -1,0 +1,145 @@
+{% extends "eforgebase.html" %}
+
+
+{% block header %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/sliderstyle.css" type="text/css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/efgallery.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/elastislide.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/efstyle.css" />
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/gallery.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.elastislide.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.tmpl.min.js"></script>
+	<noscript>
+			<style>
+				.es-carousel ul{
+					display:block;
+				}
+			</style>
+		</noscript>
+		<script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
+			<div class="rg-image-wrapper">
+				
+					<div class="rg-image-nav">
+						<a href="#" class="rg-image-nav-prev">Previous Image</a>
+						<a href="#" class="rg-image-nav-next">Next Image</a>
+					</div>
+			
+				<div class="rg-image"></div>
+				<div class="rg-loading"></div>
+				<div class="rg-caption-wrapper">
+					<div class="rg-caption" style="display:none;">
+						<p></p>
+					</div>
+				</div>
+			</div>
+</script>
+
+<script type="text/javascript">
+ 
+
+$(document).ready(function() {
+	$(".efgallery").click(function(e){ 
+	   e.preventDefault();
+	
+	   $("#efgallery").show("slow");
+	
+	});
+	
+	$("#showme").click(function(e){ 
+	   e.preventDefault();
+	
+	   $("#nagger").show("slow");
+	
+	});
+	
+	// Tabs
+	$('#tabs').tabs();
+	// Accordion
+	$("#accordion").accordion({ header: "h3" });
+				
+});
+				
+</script>
+
+
+{% endblock header %}
+
+{% block content %}
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">{{ project.name}}</a>
+     
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/eurostudio">EuroStudio</a></li>
+          <li><a href="/euroforge">EuroForge</a></li>
+          
+
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div id = "wrap">
+<div class="container-fluid" >
+
+  
+
+  <div class="row-fluid">
+<div class ="ui-state-highlight">
+    <div class="span8">
+		<div class="tab-pane" id="contact">
+			<h3>About EuroForge</h3>
+         
+                <p>Euroforge encorporates the best of French blacksmithing with modern artistry. The designs and materials used achieve top grade metalwork.</p>
+                <p>Max Brun</p>
+                <p>303.378.2944</p>
+                <p>max@maxbrun.com</p>
+  
+
+		</div>
+  </div> <!--/.widget header -->
+</div>
+   </div> <!--/.widget header --> 
+  
+</div>
+  </div>
+  <hr>
+   <hr>
+    <hr>
+     <hr><br/>
+
+  <footer  class ="ui-state-default">        
+    <div class="row-fluid">
+    	<div class="span2 offset4">
+            <h4></h4>
+            <ul>
+               
+            </ul>
+        </div>
+        <div class="span2 offset4">
+            <h4>&copy; MaxBrun.com 2012</h4>
+            
+        </div>
+        <div class="span2 offset1">
+            
+        </div>
+        <div class="span2 offset1">
+            
+        </div>
+    </div>
+  </footer>
+</div> <!-- /container -->
+{% endblock content %} 
+      
+

@@ -1,0 +1,193 @@
+/*-----------------------------------------------------------------------------------*/
+/*	1.	Euroforge custom Styles
+/*-----------------------------------------------------------------------------------*/
+.euroforgemain {
+    padding-bottom: 280px;
+}
+
+.euro-container {
+    margin-top: 80px;
+}
+#hero {
+    margin-bottom: 60px;
+}
+
+.bmenu{
+    padding: 10px;
+    margin: 20px 10px;
+    position: relative;
+}
+
+.bmenu li{
+	margin: 20px 20px;
+    font-size: 42px;
+    display: inline;
+}
+
+.bmenu li a{
+	color: #9e908a;
+	display: inline;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 5px #fff;
+	letter-spacing: 1px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.bmenu:hover li a{
+	text-shadow: 0px 0px 5px #0d1a3a;
+}
+.bmenu li a:hover{
+	color: #fff;
+	text-shadow: 0px 0px 1px #fff;
+	padding-top: 10px;
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	2.	Template custom
+/*-----------------------------------------------------------------------------------*/
+a {color: #f8eec9; text-decoration: none;}
+a:hover {color: #eedea5; text-decoration: none;}
+
+#top-menu { 
+  background-color: #575347;
+}
+#top-menu a{
+    color: #9e908a;
+    padding-right: 8px;
+    text-decoration: none;
+}
+#top-menu a:hover {color: #21190d;}
+#menu > ul a:hover .name{color: #362917 !important;}
+#menu > ul a:hover .current .name {color: #9e908a !important;}
+#menu > ul > li.current {background-color: #0b0804;}
+
+
+#filtrable a {
+    padding: 4px 10px;
+    background-color: #7c745f;
+    border: 1px solid #897348;
+    display: inline-block;
+}
+#filtrable a:hover,
+#filtrable .current a {
+    border-color: #615442;
+    background-color: #575347;
+    color: #FFFFFF;
+    
+}
+footer a{
+    color: #362917;
+}
+footer a:hover{
+    color: #000000;
+}
+
+
+.ftborder a:hover{
+    color: #645744;
+}
+
+footer p{
+    color: #665442;
+}
+h5{
+    color: #7c745f;
+}
+h1, 
+h2{
+    color: #8b8065;
+}
+h4{
+    color: #665442;
+}
+.af-form label{
+    color: #665442;
+}
+
+
+#footer-menu a:hover {color: #999999;}
+#footer > .container {
+    padding-top: 20px;
+    margin-top: -3px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+/* Bootstrap Custom*/
+/*-----------------------------------------------------------------------------------*/
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #eedea5;
+  background-color: #000000;
+}
+
+.nav > li > a:hover {
+  text-decoration: none;
+  background-color: #332c19;
+}
+
+.nav-pills > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover  {
+  color: #f6efd5;
+  background-color: #534727;
+}
+
+h1 small
+{
+  font-weight: normal;
+  line-height: 1;
+  color: #7c745f;
+}
+
+.pagination ul > li > a,
+.pagination ul > li > span {
+  float: left;
+  padding: 4px 12px;
+  line-height: 20px;
+  text-decoration: none;
+  background-color: #7c745f;
+  border: 1px solid #897348;
+  border-left-width: 0;
+}
+
+.pagination ul > li > a:hover,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  background-color: #575347;
+}
+
+
+p{
+    color: #d2ca93;
+}
+input .text-input {
+  border: 1px solid #ccc;
+  background-color: #21190d;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+
+input.text {
+background:#F00;
+color:#FFF;
+}
+
+

@@ -1,0 +1,96 @@
+{% extends "./euro-base.html" %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block content %}
+
+    <!-- wrapper -->
+    <div id="wrapper" class="has-side-navigation">
+        <div class="side-navigation">
+            <a href="#menu-toggle" id="menu-toggle" class="navbar-toggler collapsed">
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </a><!-- / menu-toggle -->
+            <a class="navbar-brand" href="/">MAX BRUN</a>
+        </div><!-- / side-navigation -->
+        <div id="sidebar-wrapper" class="sidebar-nav minimal-nav">
+            <ul class="sidebar-nav-inner">
+                <li class="active">
+                    <a class="menu-item" href="#">HOME</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- content -->
+        <div id="page-content-wrapper">
+
+            <header class="header-home2 parallax">
+                <div class="container">
+                    <div class="header-content text-center">
+                        <h1 class="header-euro bg-transparent">EURO STUDIO</h1>
+                    </div>
+                </div><!-- / container -->
+            </header>
+
+            <section id="portfolio" class="col4">
+                <div class="container">
+                    <h3 class="section-title hidden">PORTFOLIO</h3>
+                    <ul class="row portfolio lightbox list-unstyled mb-0 white-hover" id="grid">
+
+
+                        {% for project in latest_project_list %}
+                            <li class="col-md-6 col-lg-3 project" data-groups='["design", "illustrations"]'>
+                                <figure class="portfolio-item">
+                                    <div class="hovereffect">
+                                        <img class="img-responsive" src="{{ project.splashphoto.url }}"
+                                             alt="">
+                                        <div class="overlay">
+                                            <div class="hovereffect-title">
+                                                <a href="projects/{{ project.id }}">
+                                                    <h5 class="project-title">{{ project.name }}</h5>
+                                                    <p class="project-skill">{{ project.info }}</p>
+                                                </a><!-- / project link -->
+                                                <a href="{{ project.splashphotot.url }}" class="image-lightbox"
+                                                   title="{{ project.name }}"><i
+                                                        class="lnr lnr-magnifier"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                            </li>
+                        {% endfor %}
+
+                    </ul> <!-- / portfolio -->
+                </div><!-- / container -->
+            </section>
+            <!-- / portfolio -->
+
+            <footer class="bg-dark">
+                <div class="container text-center">
+                    <div class="row vcenter">
+                        <div class="col-md-4 footer-left-area">
+                            <p> <span class="text-grey"> © 2019 MaxBrun.com </span><span class="text-light-grey"> Contact: 303-378-2944 </span></p>
+                        </div>
+                        <div class="col-md-4 footer-left-area">
+                            <span class="text-light-grey">EuroStudio is a Colorado based ornamental design studio specializing in custom design and
+                            european founded style</span>
+                        </div>
+                        <div class="col-md-4 social-icons footer-right-area">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div><!-- / social-icons -->
+                    </div><!-- / row -->
+                </div><!-- / container -->
+            </footer>
+        </div><!-- / page-content-wrapper -->
+    </div><!-- / wrapper -->
+
+
+
+{% endblock content %}
+
+{% block extrajs %}
+
+{% endblock extrajs %}

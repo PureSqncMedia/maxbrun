@@ -1,0 +1,131 @@
+{% extends "eforgebase.html" %}
+
+
+{% block header %}
+<link href="{{ STATIC_URL }}css/strikestyle.css" type="text/css" media="screen" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/euro.css" />
+{% endblock header %}
+
+{% block content %}
+
+<div class="navbar navbar-fixed-top">  
+  <div class="navbar-inner">
+	<div class="container-fluid">
+	  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </a>
+	  {% ifequal project.name "EuroForge" %}
+		<a class="brand" href="#"><img style="margin:-10px 10px -10px 10px" src="{{ STATIC_URL }}img/brass.png">{{ project.name}}</a>
+	    {% else %}
+	    <a class="brand" href="#"><img style="margin:-8px 10px -8px 10px" src="{{ STATIC_URL }}img/euro.png">{{ project.name}}</a>
+	  {% endifequal %}  
+	  <div class="nav-collapse">
+	    <ul class="nav">
+	    	<li class="active"><a href="#">Portfolio</a></li>
+	        <li><a href="/{{ project.id }}/fullpage">Full Page Gallery</a></li>
+	        <li><a href="/contact">Contact</a></li> 	      
+	    </ul>
+	    <ul class="nav pull-right">
+	    	{% if project.name == "EuroStudio" %}
+	          <li class="pull-right"><a href="/1">EuroForge</a></li>          
+	        {% else %}
+	          <li class="pull-right"><a href="/2">EuroStudio</a></li>
+	        {% endif %}            
+        </ul>
+	  </div><!--/.nav-collapse -->
+	</div>
+  </div>
+</div>
+
+<!--main container-->
+
+	
+	<!--page header / breadcrumbs-->
+	<div class="container" style="margin-top:40px;">
+	    <div class="page-header">
+	        <h2>Portfolio </h2>
+	        {% ifequal project.name "Euroforge" %}
+			<div><a href="/euroforge">Home</a> &nbsp;&rsaquo;&nbsp; {{ project.name}} Portfolio </div>
+		    {% else %}
+		    <div><a href="/eurostudio">Home</a> &nbsp;&rsaquo;&nbsp; {{ project.name}} Portfolio </div>
+		    {% endifequal %}	        
+	    </div>
+	</div>
+	
+	<!--container-->
+	<section id="container">
+	    <div class="container" style="margin-bottom:440px;">
+	        <!--filter-->
+	        <ul id="filtrable">
+	        	{% ifequal project.name "Euroforge" %}
+				<li class="current all"><a class="ui-corner-all" href="#">All</a></li>
+	            <li class="railings"><a class="ui-corner-all" href="#">Railings</a></li>
+	            <li class="doors"><a class="ui-corner-all" href="#">Doors</a></li>
+	            <li class="gates"><a class="ui-corner-all" href="#">Gates</a></li>			    
+			    {% else %}			    
+			    {% endifequal %}	            
+	        </ul>
+	
+	        <div class="clear"></div>
+	        
+	        <section class="row da-thumbs portfolio filtrable clearfix">
+	        	{% for pic in project.picture_set.all %}
+				<article data-id="id-{{ forloop.counter }}" data-type="{{ pic.category }}" class="span3" >
+                        {% if pic.photo %}
+	                <span>
+       
+	                    <img src="{{ pic.photo.url }}" alt="photo"/>
+	                    <div class="pd">
+	                        <a href="{{ pic.photo.url }}" class="p-view"  data-rel="prettyPhoto"></a>
+	                    </div>
+	                </span>
+                        {% endif %}
+	                <h3><a href="#"></a></h3>
+	                <p>{{ pic.info }} </p>
+	                <a href="{{ project.id }}/{{ pic.id }}" class="btn btn-mini">Read More</a>
+	            </article>
+				{% endfor %}	            
+	          </section>
+	    </div>
+	</section>
+	
+
+
+<!--footer-->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <h3>Address</h3>
+                <address>
+                    <p>
+                        <span><i class="icon-map-marker"></i> 5973 Nelson Road</span><br/>
+                        <span><i class="icon-map-marker"></i> Longmont CO</span><br/>
+                        <span><i class="icon-map-marker"></i> 80503</span><br/>
+                        <span><i class="icon-phone"></i> (303) 378-2944 </span><br/>
+                        <span><i class="icon-envelope"></i> <a href="mailto:#">max@maxbrun.com</a></span>
+                    </p>
+                </address>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--footer menu-->
+<section id="footer-menu">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <p>&copy; Copyright 2012 MaxBrun.com </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %} 
+
+{% block extrajs %}
+
+{% endblock extrajs %}
